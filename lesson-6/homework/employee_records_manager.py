@@ -47,10 +47,16 @@ def delete_record(id):
             if id!=record.split(", ")[0]:
                 file.write(record)
 def record_data():
-    Id = int(input("Input the new employee ID: "))
+    try:
+        Id = int(input("Input the new employee ID: "))
+    except ValueError:
+        Id = int(input("Please input an integer for the employee ID: "))
     Name = input("Input the new employee name: ")
     Position = input("Input the new employee position: ")
-    Salary = int(input("Input the new employee salary: "))
+    try:
+        Salary = int(input("Input the new employee salary: "))
+    except ValueError:
+        Salary = int(input("Please enter a positive integer: "))
     return ", ".join([str(Id), Name, Position, str(Salary)])
 option = int(input("Choose an option: \n\
 Option 1: Append a new employee record.\n\
