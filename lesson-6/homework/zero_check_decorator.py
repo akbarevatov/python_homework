@@ -6,3 +6,6 @@ def check(func):
 @check
 def div(a, b):
     return a / b
+a = int(input("Input the first number: "))
+b = int(input("Input the second number: "))
+print(div(a, b))
