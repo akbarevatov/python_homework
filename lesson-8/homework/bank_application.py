@@ -64,18 +64,33 @@ def main():
     while (option<6):
         if option==1:
             name = input("Name: ")
-            initial_deposit = int(input("Initial deposit: "))
+            try:
+                initial_deposit = int(input("Initial deposit: "))
+            except ValueError:
+                initial_deposit = int(input("Please enter positive integer: "))
+            while(initial_deposit<0):
+                initial_deposit = int(input("Initial deposit cannot be negative number: "))
             bank.create_account(name=name, initial_deposit=initial_deposit)
         elif option==2:
             account_number = input("Account number: ")
             bank.view_account(account_number=account_number)
         elif option==3:
             account_number = input("Account number: ")
-            amount = int(input("Amount: "))
+            try:
+                amount = int(input("Amount: "))
+            except ValueError:
+                amount = int(input("Please enter positive integer: "))
+            while(amount<0):
+                amount = int(input("Amount cannot be negative number: "))
             bank.deposit(account_number=account_number, amount=amount)
         elif option==4:
             account_number = input("Account number: ")
-            amount = int(input("Amount: "))
+            try:
+                amount = int(input("Amount: "))
+            except ValueError:
+                amount = int(input("Please enter positive integer: "))
+            while(amount<0):
+                amount = int(input("Amount cannot be negative number: "))
             bank.withdraw(account_number=account_number, amount=amount)
         elif option==5:
             bank.load_from_file()
