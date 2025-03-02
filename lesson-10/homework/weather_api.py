@@ -17,11 +17,9 @@ response = requests.get(base_url, params=params)
 
 if response.status_code == 200:
     data = response.json()
-    print(f"Daily information:")
-    print(f"Summary: {data["daily"][0]["summary"]}")
-    print(f"Temperature (day): {round(float(data["daily"][0]["temp"]["day"])-273.15,1)} °C")
-    print(f"Temperature (night): {round(float(data["daily"][0]["temp"]["night"])-273.15,1)} °C")
-    print(f"Humidity: {data["daily"][0]["humidity"]} %")
-    print(f"Wind speed: {data["daily"][0]["wind_speed"]} m/s")
+    
 else:
-    print(f"Error: {response.status_code}")
+    raise Exception(response.status_code)
+
+print(f"Daily information:")
+print(f"Summary: {data["daily"][0]["summary"]}")
