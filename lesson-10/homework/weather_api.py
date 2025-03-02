@@ -1,7 +1,7 @@
 import requests
 import json
 from cities import capital_cities
-api_key = "8f9324e53a2c2702566a21c3436aeb0a"
+api_key = "b4cd273165d562113330e111b114c15a"
 base_url = "https://api.openweathermap.org/data/3.0/onecall"
 
 
