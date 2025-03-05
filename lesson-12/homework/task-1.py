@@ -41,7 +41,7 @@ def main():
     weather.parse("weather.html")
     weather.display()
     weather.calculate_average_temperature()
-    weather.find_days("rainy")
+    weather.find_days("sunny")
     weather.find_highest_lowest()
 if __name__=="__main__":
     main()
