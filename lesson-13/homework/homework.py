@@ -1,5 +1,6 @@
 import numpy as np
-
+from random import randint
+import random
 # Q1
 v1 = np.arange(10,50)
 
